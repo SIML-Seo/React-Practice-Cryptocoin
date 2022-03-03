@@ -46,7 +46,7 @@ function Chart() {
                         // fill: {type: "gradient", gradient:{gradientToColors: ["#0be881"], stops: [0, 100]}},
                         // colors: ["#0fbcf9"],
                         // tooltip: {y: {formatter: (value) => `$ ${value.toFixed(3)}`}},
-                        chart: {height: 500, type:"candlestick"},
+                        chart: {height: 500, type:"candlestick", background:"transparent"},
                         title: {text: "CandleStick Chart", align: "left"},
                         xaxis: {type: "datetime"},
                         yaxis: {show: false, tooltip: {enabled: true}},

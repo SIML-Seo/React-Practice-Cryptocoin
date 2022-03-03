@@ -15,13 +15,28 @@ margin: 0 auto;
 const Header = styled.header`
 height: 10vh;
 display: flex;
-justify-content: center;
+justify-content: space-between;
 align-items: center;
+    div:last-child{
+        width: 10%
+    }
 `;
 const Title = styled.h1`
 font-size: 48px;
 color: ${props => props.theme.accentColor};
 `;
+const HomeAnchor = styled.div`
+    width: 30px;
+    height: 30px;
+    display: flex;
+    background-color: rgb(47, 54, 64);
+    border: 1px solid white;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    font-weight: 900;
+`
 
 const Loader = styled.span`
 text-align: center;
@@ -163,9 +178,13 @@ function Coin() {
                 </title>
             </Helmet>
             <Header>
+                <HomeAnchor>
+                    <Link to={`/`}>←</Link>
+                </HomeAnchor>
                 <Title>
                     {state?.name ? state.name : loading ? "Loading.." : infoData?.name}
                 </Title>
+                <div></div>
             </Header>
             {loading ? (
                 <Loader>loading...</Loader>
@@ -204,7 +223,7 @@ function Coin() {
                             <Link to={`/${coinId}/price`}>Price</Link>
                         </Tab>
                     </Tabs>
-                    <Outlet context={{coinId}}/>
+                    <Outlet context={{coinId, tickersData}}/>
                 </>
             )}
         </Container>
